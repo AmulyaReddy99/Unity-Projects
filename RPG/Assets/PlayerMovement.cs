@@ -2,13 +2,11 @@
 
 public class PlayerMovement : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		Debug.Log("Hello World");
-	}
+	public Rigidbody rb;
 	
-	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		
+		rb.AddForce(0, 0, 2000 * Time.deltaTime);
+
 	}
 }

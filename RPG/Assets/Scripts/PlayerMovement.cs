@@ -24,4 +24,9 @@ public class PlayerMovement : MonoBehaviour {
 			rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
 
 	}
+
+	void OnCollisionEnter(Collision collisionInfo){
+		if(collisionInfo.collider)
+			Debug.Log("Collided"+collisionInfo.collider.name.ToString());
+	}
 }

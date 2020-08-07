@@ -26,6 +26,7 @@ ModelImporter:
     2300000: Cube
     3300000: Cube
     4300000: Cube
+    6400000: Cube
     10800000: Light
   externalObjects: {}
   materials:
@@ -60,7 +61,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

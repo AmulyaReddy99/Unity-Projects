@@ -1,26 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
 	public Camera cam;
-
 	public NavMeshAgent agent;
-
 	public Rigidbody rb;
-
 	public ParticleSystem lightEmit;
+	public int score = 0;
 
-	protected int score = 0;
-
-	[SerializeField]
-	private float speed = 5f;
-	public float forwardForce = 8000f;
-	public float sidewaysForce = 100f;
-
+	Text scoreText;
+	
 	void Awake(){
 		// lightEmit.Stop();
 		cam = FindObjectOfType<Camera> ();
+		scoreText = GameObject.FindWithTag("Score").GetComponent<Text>();
 	}
 	
 	void FixedUpdate () {
@@ -32,18 +27,6 @@ public class PlayerController : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit))
 				agent.SetDestination(hit.point);
 		}
-
-		float _xMov = Input.GetAxis("Horizontal");
-		float _zMov = Input.GetAxis("Vertical");
-
-		Vector3 _movHorizontal = transform.right * _xMov;
-		Vector3 _movVertical = transform.forward * _zMov;
-
-		Vector3 velocity = (_movHorizontal + _movVertical) * speed;
-
-		if (velocity != Vector3.zero)
-			rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
-
 	}
 
 	void OnCollisionEnter(Collision collisionInfo){
@@ -56,6 +39,7 @@ public class PlayerController : MonoBehaviour {
 			lightEmit.Play();
 			Destroy(collisionInfo.gameObject);
 			score++;
+			scoreText.text = score.ToString();
 		}
 	}
 }

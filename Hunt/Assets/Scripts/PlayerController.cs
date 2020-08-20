@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public NavMeshAgent agent;
 	public Rigidbody rb;
 	public ParticleSystem lightEmit;
+
 	public int score = 0;
 
 	Text scoreText;
@@ -25,7 +26,8 @@ public class PlayerController : MonoBehaviour {
 			RaycastHit hit;
 
 			if (Physics.Raycast(ray, out hit))
-				agent.SetDestination(hit.point);
+				if(hit.collider.tag != "Obstacle")
+					agent.SetDestination(hit.point);
 		}
 	}
 

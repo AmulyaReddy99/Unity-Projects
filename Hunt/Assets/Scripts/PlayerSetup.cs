@@ -17,5 +17,11 @@ public class PlayerSetup : NetworkBehaviour {
 		}
 		else
 			Camera.main.gameObject.SetActive(false);
+		RegisterPlayer();
+	}
+
+	void RegisterPlayer(){
+		string _ID = "Player " + GetComponent<NetworkIdentity>().netId;
+		transform.name = _ID;
 	}
 }

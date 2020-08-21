@@ -29,17 +29,21 @@ public class PlayerShoot : NetworkBehaviour {
 			// if (Physics.Raycast(cam.transform.position, cam.transform.forward, out _hit, weapons.range, mask))	
 			if (Physics.Raycast(ray, out _hit))
 				if (_hit.collider.tag=="Obstacle" && Input.GetButtonDown("Fire1")){
-					Destroy(_hit.collider.gameObject);
+					CmdObstacleShot(_hit.collider.gameObject);
 					Shoot(_hit.point);
 				}
-				else
-					agent.SetDestination(_hit.point);
 		}
 	}
 
+	[Client]
 	void Shoot(Vector3 pos){
 		Instantiate(blast, pos, Quaternion.identity);
 		blast.Play();
+	}
+
+	[Command]
+	void CmdObstacleShot(GameObject obstacle){
+		Destroy(obstacle);
 	}
 
 }

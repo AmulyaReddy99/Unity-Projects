@@ -2,30 +2,29 @@
 
 public class FollowPlayer : MonoBehaviour {
 
-	public GameObject player;
-	public Vector3 initial;
+	public Transform target;
 	public Vector3 offset;
-	public float lookSensitivity = 3f;
 
-	bool first = true;
-	
-	void Update () {
-		
-		// transform.position = GameObject.FindWithTag("Player").transform.position + offset;
-		// transform.position = GameObject.FindWithTag("Player").transform.position + offset;
+	public float pitch = 2f;
 
-		// if(first){
-		// 	transform.eulerAngles = new Vector3(0, transform.eulerAngles.y+lookSensitivity,0);
-		// 	first = false;
-		// }
-		
-		if(Input.GetKey("d"))
-			transform.eulerAngles = new Vector3(0, transform.eulerAngles.y+lookSensitivity,0);
+	private float currentZoom = 10f;
+	public float zoomSpeed = 4f;
+	public float minZoom = 5f;
+	public float maxZoom = 15f;
 
-		if(Input.GetKey("a"))
-			transform.eulerAngles = new Vector3(0, transform.eulerAngles.y-lookSensitivity,0);	
+	public float yawSpeed = 100f;
+	public float currentYaw = 0f;
 
-		if (Mathf.Abs(transform.eulerAngles.y) > 360) 
-			transform.eulerAngles = new Vector3(0, transform.eulerAngles.y%360f,0);
+	void FixedUpdate(){
+		currentZoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+		currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
+		currentYaw -= Input.GetAxis("Horizontal") * yawSpeed * Time.deltaTime;
+	}
+
+	void LateUpdate () {
+		transform.position = target.position - offset * currentZoom;
+		transform.LookAt(target.position + Vector3.up * pitch);
+
+		transform.RotateAround(target.position, Vector3.up, currentYaw);
 	}
 }

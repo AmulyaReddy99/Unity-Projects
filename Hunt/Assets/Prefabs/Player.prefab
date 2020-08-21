@@ -74,13 +74,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1500306517869082}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 0.37496376, y: 0.5, z: 0.40290645}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
+  m_LocalPosition: {x: 0, y: 4.9, z: -11.5}
+  m_LocalScale: {x: 0.3749638, y: 0.5, z: 0.4029064}
   m_Children: []
   m_Father: {fileID: 4018549800481316}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!20 &20957542640992958
 Camera:
   m_ObjectHideFlags: 1
@@ -213,11 +213,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23ca5e99080a4805b6b1ab2adc1962e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 20957542640992958}
   agent: {fileID: 195746622720534390}
-  rb: {fileID: 54792592969773676}
   lightEmit: {fileID: 198364934971520374, guid: 8284c0754092540c6a74525b8b2996ad,
     type: 2}
+  rb: {fileID: 54792592969773676}
   score: 0
 --- !u!114 &114279248053835518
 MonoBehaviour:
@@ -230,10 +230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 793843b41131c43ecb02b2cca3531c6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1902272524482338}
+  target: {fileID: 4018549800481316}
   initial: {x: 0, y: 1, z: -10}
-  offset: {x: -0, y: 6, z: -25}
+  offset: {x: -0, y: -3, z: 6}
   lookSensitivity: 3
+  pitch: 2
 --- !u!114 &114392787857342162
 MonoBehaviour:
   m_ObjectHideFlags: 1

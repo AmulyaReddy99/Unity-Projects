@@ -22,15 +22,15 @@ public class PlayerController : MonoBehaviour {
 		scoreText = GameObject.FindWithTag("Score").GetComponent<Text>();
 	}
 	
-	void Update(){
-		
-		if (Input.GetButtonDown("Jump")){
-			// Debug.Log(rb.velocity.y.ToString());
-			// rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-			rb.velocity = jump * jumpForce;
-			// isGrounded = false;
-		}
-	}
+	// void Update(){
+
+	// 	if (Input.GetButtonDown("Jump") && isGrounded){
+	// 		// Debug.Log(rb.velocity.y.ToString());
+	// 		// rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+	// 		rb.velocity += jump * jumpForce;
+	// 		isGrounded = false;
+	// 	}
+	// }
 
 	void FixedUpdate () {
 

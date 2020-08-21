@@ -145,7 +145,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 cff2f7383b123d207597108afcecde7e Assembly-CSharp.dll:.CFX_AutoRotate
 5d3355836b6ee1f2564c6efbfbc493b8 Assembly-CSharp.dll:.LevelGenerator
-f7e182b088e4d03c9e89a1f67ada199c Assembly-CSharp.dll:.PlayerController
+f83b28b4ef19b40cf0c3ee50a349a149 Assembly-CSharp.dll:.PlayerController
 4536fed390d6638cfec4387322259968 Assembly-CSharp.dll:.CFX_Demo_New
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 f02726adeff0a3ec5905565234b372da UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
@@ -167,3 +167,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 a71e89494a00540356e3247bc0ed0342 Assembly-CSharp.dll:UnityEngine.AI.NavMeshLink
 6fb7e1be716963a0c08757e17b011a9d Assembly-CSharp.dll:.CFX_Demo_RandomDirectionTranslate
 b4b31ef7abb9b126ac6db444e95388d8 Assembly-CSharp.dll:.SpawnItems
+33284625781f9bd0c67619e5c61a0488 Assembly-CSharp.dll:.SpawnOverNetwork

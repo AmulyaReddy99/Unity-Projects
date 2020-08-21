@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33802036114222714}
   - component: {fileID: 23110271215191176}
   - component: {fileID: 65674894943001390}
+  - component: {fileID: 114108895347888472}
   m_Layer: 0
   m_Name: Bait
   m_TagString: Bait
@@ -96,3 +97,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114108895347888472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579187937053254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 89
+    i1: 90
+    i2: 35
+    i3: 15
+    i4: 73
+    i5: 121
+    i6: 4
+    i7: 23
+    i8: 40
+    i9: 224
+    i10: 208
+    i11: 47
+    i12: 223
+    i13: 115
+    i14: 143
+    i15: 189
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0

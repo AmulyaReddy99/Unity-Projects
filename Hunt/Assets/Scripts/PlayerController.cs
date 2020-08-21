@@ -7,9 +7,12 @@ public class PlayerController : MonoBehaviour {
 	public Camera cam;
 	public NavMeshAgent agent;
 	public Rigidbody rb;
+	public Vector3 jump;
 	public ParticleSystem lightEmit;
+	public float jumpForce = 8000f;
 
 	public int score = 0;
+	public bool isGrounded = true;
 
 	Text scoreText;
 	
@@ -19,6 +22,16 @@ public class PlayerController : MonoBehaviour {
 		scoreText = GameObject.FindWithTag("Score").GetComponent<Text>();
 	}
 	
+	void Update(){
+		
+		if (Input.GetButtonDown("Jump")){
+			// Debug.Log(rb.velocity.y.ToString());
+			// rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+			rb.velocity = jump * jumpForce;
+			// isGrounded = false;
+		}
+	}
+
 	void FixedUpdate () {
 
 		if (Input.GetMouseButtonDown(0)){

@@ -1918,7 +1918,9 @@ MonoBehaviour:
   m_PlayerSpawnMethod: 1
   m_OfflineScene: 
   m_OnlineScene: 
-  m_SpawnPrefabs: []
+  m_SpawnPrefabs:
+  - {fileID: 1579187937053254, guid: 595a230f4979041728e0d02fdf738fbd, type: 2}
+  - {fileID: 1157798500963032, guid: 3afff65a8628146d8a4594bb5aca827f, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -2930,7 +2932,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1695371085032550, guid: 6fc962cc288684655a3094e4b831c9f8, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6fc962cc288684655a3094e4b831c9f8, type: 2}
@@ -5677,7 +5679,6 @@ GameObject:
   - component: {fileID: 994458119}
   - component: {fileID: 994458121}
   - component: {fileID: 994458120}
-  - component: {fileID: 994458122}
   m_Layer: 5
   m_Name: Text
   m_TagString: Score
@@ -5742,17 +5743,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 994458118}
---- !u!114 &994458122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 994458118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52eed2dda419449a58c19c763f132ca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &994659576
 GameObject:
   m_ObjectHideFlags: 0
@@ -6884,7 +6874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1191793544
 MonoBehaviour:
   m_ObjectHideFlags: 0

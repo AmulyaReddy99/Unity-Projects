@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 114392787857342162}
   - component: {fileID: 114077340181804538}
   - component: {fileID: 114769111080065306}
+  - component: {fileID: 114011609150998336}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -168,11 +169,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!81 &81685501200149066
 AudioListener:
@@ -181,6 +182,21 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1500306517869082}
   m_Enabled: 1
+--- !u!114 &114011609150998336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902272524482338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 012d40799850a47528666061b2432c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bait: {fileID: 1579187937053254, guid: 595a230f4979041728e0d02fdf738fbd, type: 2}
+  obstacle: {fileID: 1157798500963032, guid: 3afff65a8628146d8a4594bb5aca827f, type: 2}
+  baitCount: 25
+  obstacleCount: 5
 --- !u!114 &114077340181804538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
-  m_SendInterval: 0.1
+  m_SendInterval: 0.11111111
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -215,10 +231,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 20957542640992958}
   agent: {fileID: 195746622720534390}
+  rb: {fileID: 54792592969773676}
+  jump: {x: 0, y: 1, z: 0}
   lightEmit: {fileID: 198364934971520374, guid: 8284c0754092540c6a74525b8b2996ad,
     type: 2}
-  rb: {fileID: 54792592969773676}
+  jumpForce: 800
   score: 0
+  isGrounded: 1
 --- !u!114 &114279248053835518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,10 +250,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4018549800481316}
-  initial: {x: 0, y: 1, z: -10}
   offset: {x: -0, y: -3, z: 6}
-  lookSensitivity: 3
   pitch: 2
+  zoomSpeed: 4
+  minZoom: 5
+  maxZoom: 15
+  yawSpeed: 100
+  currentYaw: 0
 --- !u!114 &114392787857342162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -283,6 +305,7 @@ MonoBehaviour:
   - {fileID: 20957542640992958}
   - {fileID: 81685501200149066}
   - {fileID: 114769111080065306}
+  - {fileID: 114011609150998336}
   remoteLayerName: RemotePlayer
 --- !u!114 &114769111080065306
 MonoBehaviour:

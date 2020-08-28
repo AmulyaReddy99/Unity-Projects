@@ -24,12 +24,14 @@ public class GraffitiController : MonoBehaviour {
 			if (equipped){
 				icon.enabled = true;
 				graffiti.SetActive(true);
-				graffiti.transform.position = new Vector3(player.position.x, player.position.y + graffitiYOffset, player.position.z - graffitiZOffset);
 			}
 			else {
 				graffiti.SetActive(false);
 				icon.enabled = false;
 			}
 		}
+
+		if (equipped)
+			graffiti.transform.position = new Vector3(player.position.x, player.position.y + graffitiYOffset, player.position.z - graffitiZOffset);
 	}
 }
